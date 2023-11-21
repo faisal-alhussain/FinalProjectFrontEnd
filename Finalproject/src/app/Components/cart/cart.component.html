@@ -1,0 +1,17 @@
+<p>cart works!</p>
+<button (click)="getItem()">Get Items</button>
+<input type="text" placeholder="Write the Product" [(ngModel)]="itemProduct">
+<input type="text" placeholder="Write the  name" [(ngModel)]="itemName">
+<input type="text" placeholder="Write the  price" [(ngModel)]="itemPrice">
+<input type="text" placeholder="Write the quanitity" [(ngModel)]="itemQuantity">
+
+<button (click)="postItem()">Post Item</button>
+<button (click)="putItem()">Put Item</button>
+<button (click)="deleteItem()">Delete Course</button>
+
+<br>
+<ul>
+<li *ngFor="let item of item">
+<p>{{item.product}} - {{item.price}}-{{item.name}}- {{item.quantity}}-  </p>
+</li>
+</ul>
