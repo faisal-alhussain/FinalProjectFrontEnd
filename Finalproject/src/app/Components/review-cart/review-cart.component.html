@@ -1,7 +1,35 @@
-<p>review-cart works!</p>
-<br>
-<ul>
-<li *ngFor="let item of item">
-<p>{{item.product}} - {{item.price}}-{{item.name}}- {{item.quantity}}-  </p>
-</li>
-</ul>
+<!-- items-list.component.html -->
+
+<section class="py-5">
+  <div class="container px-4 px-lg-5 mt-5">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 justify-content-center">
+      <!-- Use *ngFor to loop through items and display each one -->
+      <div class="col mb-4" *ngFor="let item of item">
+        <!-- Adjusted card size -->
+        <div class="card h-100">
+          <!-- Product image -->
+          <img class="card-img-top" src="https://picsum.photos/450/300/?random" alt="Random Image">
+          <!-- Product details -->
+          <div class="card-body p-4">
+            <div class="text-center">
+              <!-- Product name -->
+              <h5 class="fw-bolder">{{ item.name }}</h5>
+              <!-- Product details -->
+              <p>{{ item.product }}</p>
+              <p>Quantity: {{ item.quantity }}</p>
+              <!-- Product price -->
+              {{ item.price | currency:'USD':true:'1.2-2' }}
+            </div>
+          </div>
+          <!-- Product actions -->
+          <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+            <!-- Add a button to navigate to item details page -->
+            <div class="text-center">
+              <a class="btn btn-outline-dark mt-auto" [routerLink]="['/item', item.id ?? 'default']">View details</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

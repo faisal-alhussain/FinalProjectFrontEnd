@@ -1,17 +1,39 @@
-<p>cart works!</p>
-<button (click)="getItem()">Get Items</button>
-<input type="text" placeholder="Write the Product" [(ngModel)]="itemProduct">
-<input type="text" placeholder="Write the  name" [(ngModel)]="itemName">
-<input type="text" placeholder="Write the  price" [(ngModel)]="itemPrice">
-<input type="text" placeholder="Write the quanitity" [(ngModel)]="itemQuantity">
+<body class="bg-light">
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="card-title text-center mb-4">Add Product</h2>
 
-<button (click)="postItem()">Post Item</button>
-<button (click)="putItem()">Put Item</button>
-<button (click)="deleteItem()">Delete Course</button>
+            <!-- Product Input -->
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Write the Product" [(ngModel)]="itemProduct">
+            </div>
 
-<br>
-<ul>
-<li *ngFor="let item of item">
-<p>{{item.product}} - {{item.price}}-{{item.name}}- {{item.quantity}}-  </p>
-</li>
-</ul>
+            <!-- Name Input -->
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Write the Name" [(ngModel)]="itemName">
+            </div>
+
+            <!-- Price Input -->
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Write the Price" [(ngModel)]="itemPrice">
+            </div>
+
+            <!-- Quantity Input -->
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Write the Quantity" [(ngModel)]="itemQuantity">
+            </div>
+
+            <!-- Post Item Button -->
+            <button class="btn btn-primary" (click)="postItem()">Post Item</button>
+
+            <hr>
+
+            <!-- Display Items -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

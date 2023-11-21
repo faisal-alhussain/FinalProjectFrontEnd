@@ -6,6 +6,10 @@ import { Observable } from "rxjs";
   providedIn: 'root'
 })
 export class CartService {
+  getItemById(itemId: string): Observable<any> {
+    const url = `${this.API_URL}/${itemId}`;
+    return this.http.get<any>(url);
+  }
 
   private readonly API_URL="http://localhost:8080/api/item"
 
@@ -24,5 +28,6 @@ export class CartService {
   deleteItem(id: string): Observable<any> {
     return this.http.delete<any>(`${this.API_URL}/${id}`);
   }
+  
 }
 
