@@ -5,6 +5,7 @@ import { ReviewCartComponent } from './Components/review-cart/review-cart.compon
 import { UpdateCartComponent } from './Components/update-cart/update-cart.component';
 import { HomeComponent } from './Components/home/home.component';
 import { ItemDetailsComponent } from './Components/item-details/item-details.component';
+import { AboutUsComponent } from './Components/about-us/about-us.component';
 
 const routes: Routes = [
     {
@@ -24,7 +25,9 @@ const routes: Routes = [
       component: UpdateCartComponent
     } ,
     { path: 'item/:id',
-    component: ItemDetailsComponent  }
+    component: ItemDetailsComponent  },
+    { path: 'about_us',
+    component: AboutUsComponent  }
     
     
 ]
